@@ -1,20 +1,15 @@
 {
-  "name": "liri-node-app",
+  "name": "hi",
   "version": "1.0.0",
   "description": "",
   "main": "liri.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phpatel662/liri-node-app.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/phpatel662/liri-node-app/issues"
-  },
-  "homepage": "https://github.com/phpatel662/liri-node-app#readme"
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }
