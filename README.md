@@ -29,4 +29,12 @@ If you say "node liri.js help"- LIRI will actually give you a bunch of commands 
 
 ## The "movie-this" command
 ![see image](6.png)
-* the "
+![see image](7.png)
+* the "movie-this" will display the movie title, year, imdb rating, rotten tomatoes rating, country it took place, language, plot and actors.
+* the default if a person doesn't put in a movie title after "movie-this" is "Mr.Nobody".
+
+## The "do-what-it says" command
+![see image](9.png)
+
+* in a separate file I put a command for "spotify-this-song" I want it that way. 
+* LIRI reads this file and spits out the information from "spotify-this-song"
