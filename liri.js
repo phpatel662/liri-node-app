@@ -1,12 +1,12 @@
 //Read and set any environment variables with the .env package.
-
+require("dotenv").config();
 
 //Require data from File System npm package
 var fs = require("fs");
 
 
 // Requiring our Spotify function exported from spotify.js
-
+var mySpotify = require("./spotify.js");
 // Requiring our Movies function exported from omdb.js
 var myMovies = require("./movies.js");
 // Requiring our Movies function exported from omdb.js
@@ -24,13 +24,16 @@ switch (userCommand) {
     case "help":
         console.log("Please type one of these commands\n"+
                     "'concert-this': to search your favorite artist concerts\n"+
-                    
+                    "'spotify-this-song': to search your favorite song\n"+
                     "'movie-this': to search your favorite movie \n"+
                     "'do-what-it-says': using command from random.txt \n"
                     );
         break;
     case "concert-this":
         myConcert(userInput);
+        break;
+    case "spotify-this-song":
+        mySpotify(userInput);
         break;
     case "movie-this":
         myMovies(userInput);
@@ -54,8 +57,11 @@ function doWhatItSays() {
         var dataArr = data.split(",");
         
         // Each command is represented. Because of the format in the txt file, remove the quotes to run these commands. 
-
-        if (dataArr[0] === "concert-this") {
+        if (dataArr[0] === "spotify-this-song") {
+            var songcheck = dataArr[1].slice(1, -1);
+            console.log("Song Check: "+songcheck)
+            mySpotify(songcheck);
+        } else if (dataArr[0] === "concert-this") {
             var venueName = dataArr[1].slice(1, -1);
             console.log("Venue Name: "+venueName)
             myConcert(venueName);

@@ -1,5 +1,5 @@
 // Requiring our spotify, OMDB, and bands in town modules exported from keys.js
-
+var keys = require("./keys");
 //Require data from File System npm package
 var fs = require("fs");
 //Require data from Axios npm package
@@ -15,7 +15,7 @@ function myMovies(userInput) {
         console.log("It's on Netflix!")
         movie = "Mr. Nobody"
     }
-    var url = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    var url = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=" + keys.omdb.id;
     axios.get(url).then(
         function (response) {
             // console.log(response.data)

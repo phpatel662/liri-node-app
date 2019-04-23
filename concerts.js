@@ -1,5 +1,5 @@
 // Requiring our spotify, OMDB, and bands in town modules exported from keys.js
-
+var keys = require("./keys");
 //Require data from File System npm package
 var fs = require("fs");
 //Require data from Axios npm package
@@ -9,8 +9,8 @@ var moment = require('moment');
 
 function myConcert(userInput) {
     var artist = userInput;
-    var url = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=bootcamp226";
-
+    var url = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=" + keys.bandsInTown.id; 
+  
     axios.get(url).then(
         function (response) {
             // console.log(response.data)
